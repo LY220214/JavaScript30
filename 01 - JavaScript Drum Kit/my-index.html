@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="https://fav.farm/🔥" />
+  <link rel="icon" href="https://fav.farm/🖕" />
 </head>
 <body>
-
 
   <div class="keys">
     <div data-key="65" class="key">
@@ -57,9 +56,47 @@
   <audio data-key="74" src="sounds/snare.wav"></audio>
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
-
 <script>
+  const keys = document.querySelectorAll('.key')
+  const audios = document.querySelectorAll('audio')
 
+  const play = (audio, target) => {
+    target.classList.add('playing')
+    audio.currentTime = 0
+    audio.play()
+  }
+
+  // 点击播放对应音乐
+  const clickPlay = (e) => {
+    const audioId = e.currentTarget.dataset.key
+    for (let audio of audios) {
+      if (audio.dataset.key === audioId) {
+        play(audio, e.currentTarget)
+        break
+      }
+    }
+  }
+
+  // 按键播放对应音乐
+  const keyDownPlay = (e) => {
+    const targetAudio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+    const targetModule = document.querySelector(`div[data-key="${e.keyCode}"]`)
+    if (!targetAudio) return
+
+    play(targetAudio, targetModule)
+  }
+
+  // 声音结束
+  const audioEnded = (e) => {
+    e.currentTarget.classList.remove('playing')
+  }
+
+  keys.forEach(key => {
+    key.addEventListener('click', clickPlay)
+    key.addEventListener('transitionend', audioEnded)
+  })
+
+  document.addEventListener('keydown', keyDownPlay)
 </script>
 
 

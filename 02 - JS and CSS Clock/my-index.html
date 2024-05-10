@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+
+    <div class="clock">
+      <div class="clock-face">
+        <div id="numbers">
+          <span id="topNum">12</span>
+          <span id="rightNum">3</span>
+          <span id="bottomNum">6</span>
+          <span id="leftNum">9</span>
+        </div>
+        <div class="hands">
+          <div class="hand hour-hand"></div>
+          <div class="hand min-hand"></div>
+          <div class="hand second-hand"></div>
+        </div>
+      </div>
+    </div>
+
+
+  <style>
+    html {
+      background: #534343;
+      background-size: cover;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+      user-select: none;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px solid #2a2a2a;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #b0b0b0,
+        inset 0 0 10px #202020,
+        0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .clock-face {
+      display: flex;
+      align-items: center;
+      font-size: 36px;
+      color: transparent;
+      -webkit-text-stroke: 1px white;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px); /* account for the height of the clock hands */
+    }
+
+    .hands {
+      display: flex;
+      justify-content: right;
+      width: 50%;
+      height: 100%;
+      position: relative;
+    }
+
+    .hand {
+      width: 100%;
+      height: 6px;
+      background: wheat;
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+      transition: all 1s;
+    }
+
+    .hour-hand {
+      width: 70%;
+    }
+
+    .min-hand {
+      width: 80%;
+      height: 4px;
+    }
+
+    .second-hand {
+      width: 90%;
+      height: 2px;
+    }
+
+    #numbers {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto auto;
+    }
+
+    #topNum {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    #rightNum{
+      grid-column: 3;
+      grid-row: 2;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+    }
+
+    #bottomNum {
+      grid-column: 2;
+      grid-row: 3;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+    }
+
+    #leftNum {
+      grid-column: 1;
+      grid-row: 2;
+      display: flex;
+      align-items: center;
+    }
+  </style>
+
+  <script>
+    const hands = document.querySelectorAll('.hand')
+    const hourHand = hands[0]
+    const minHand = hands[1]
+    const secHand = hands[2]
+    const flushDate = () => {
+      const now = new Date()
+      const sec = now.getSeconds()
+      const min = now.getMinutes()
+      const hour = now.getHours()
+      const secDeg = (sec / 60 * 360) + 90
+      const minDeg = (min / 60 *360) + (sec / 60 * 6)+ 90
+      const hourDeg = (hour / 12 *360) + (min / 60 * 30) + 90
+
+      // 防止突变
+      if (secDeg === 90) secHand.style.transition = 'all 0s'
+      else secHand.style.transition = ''
+      if (minDeg === 90) minHand.style.transition = 'all 0s'
+      else minHand.style.transition = ''
+      if (hourDeg === 90) hourHand.style.transition = 'all 0s'
+      else hourHand.style.transition = ''
+
+      secHand.style.transform = `rotate(${secDeg}deg)`
+      minHand.style.transform = `rotate(${minDeg}deg)`
+      hourHand.style.transform = `rotate(${hourDeg}deg)`
+    }
+
+    setInterval(flushDate, 1000)
+
+    flushDate()
+  </script>
+</body>
+</html>
