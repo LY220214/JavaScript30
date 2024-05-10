@@ -12,6 +12,6 @@
 
 - `audio` 标签可以播放声音，调用 `play()` 方法开始播放，修改 `currentTime` 可改变播放进度。
 
-- `transitionend` 事件过渡效果完成后触发的事件。
+- `transitionend` 事件：过渡效果完成后触发的事件。
 - 点击事件的 `e.target`（被点击的目标元素）和 `e.currentTarget`（最终执行方法的元素）。
 
