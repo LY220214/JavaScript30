@@ -43,6 +43,7 @@
 | 01 - JavaScript Drum Kit | [30 Day JS -- 1 (codepen.io)](https://codepen.io/LY220214/full/oNRNbYB) | [01 - JavaScript Drum Kit](01%20-%20JavaScript%20Drum%20Kit) |
 | 02 - JS and CSS Clock    | [30 Day JS -- 2 (codepen.io)](https://codepen.io/LY220214/full/MWdWVpV) | [02 - JS and CSS Clock](02%20-%20JS%20and%20CSS%20Clock)     |
 | 03 - CSS Variables       | [30 Day JS -- 3 (codepen.io)](https://codepen.io/LY220214/full/OJYPJKg) | [03 - CSS Variables](03%20-%20CSS%20Variables)               |
+| 04 - Array Cardio Day 1  | [30 Day JS -- 4 (codepen.io)](https://codepen.io/LY220214/full/eYamEJx) | [04 - Array Cardio Day 1](04%20-%20Array%20Cardio%20Day%201) |
 
 
 
