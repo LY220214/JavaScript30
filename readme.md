@@ -44,6 +44,7 @@
 | 02 - JS and CSS Clock    | [30 Day JS -- 2 (codepen.io)](https://codepen.io/LY220214/full/MWdWVpV) | [02 - JS and CSS Clock](02%20-%20JS%20and%20CSS%20Clock)     |
 | 03 - CSS Variables       | [30 Day JS -- 3 (codepen.io)](https://codepen.io/LY220214/full/OJYPJKg) | [03 - CSS Variables](03%20-%20CSS%20Variables)               |
 | 04 - Array Cardio Day 1  | [30 Day JS -- 4 (codepen.io)](https://codepen.io/LY220214/full/eYamEJx) | [04 - Array Cardio Day 1](04%20-%20Array%20Cardio%20Day%201) |
+| 05 - Flex Panel Gallery  | [30 Day JS -- 5 (codepen.io)](https://codepen.io/LY220214/full/KKLwrqm) | [05 - Flex Panel Gallery](05%20-%20Flex%20Panel%20Gallery)   |
 
 
 
